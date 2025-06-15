@@ -34,3 +34,22 @@ a:hover {
 .navbar, .bg-dark {
     border-bottom: 1px solid var(--bs-border-color);
 }
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: rgba(13, 17, 23, 0); /* 투명 */
+    color: var(--bs-body-color);
+    z-index: 1000;
+    transition: opacity 0.5s ease;
+}
+
+header.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
