@@ -41,20 +41,12 @@ body::after {
 /* 공통 section 스타일 */
 section {
     padding: 100px 0;
-    color: var(--bs-body-color);
-    backdrop-filter: blur(2px);
     border-top: 1px solid var(--bs-border-color);
-    opacity: 0.7;
 }
 
-/* 홀수/짝수 섹션 배경 투명도 컬러 구분 */
-section:nth-child(odd) {
-    background-color: rgba(33, 38, 45, 0.85);
-}
 section:nth-child(even) {
-    background-color: rgba(22, 27, 34, 0.85);
+    background-color: rgba(var(--bs-secondary-bg-rgb), 0.5);
 }
-
 /* 고정 헤더 */
 header {
     position: fixed;
