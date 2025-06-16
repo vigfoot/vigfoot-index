@@ -6,6 +6,7 @@
     --bs-primary: #58a6ff;
     --bs-border-color: #30363d;
 }
+
 body::before {
     content: "";
     position: fixed;
@@ -38,10 +39,16 @@ body::after {
     z-index: -1;
 }
 
+
 section {
+    min-height: 50vh;
     padding: 100px 0;
-    min-height: 30vh;
     border-top: 1px solid var(--bs-border-color);
+}
+
+section > * {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 section:nth-child(even) {
