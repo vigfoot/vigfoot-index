@@ -12,33 +12,22 @@ window.addEventListener('scroll', () => {
     handleScroll();
 });
 
-const loadedSections = new Set();
 
 function isElementInViewport(el) {
-    const rect = el.getBoundingClientRect();
-    return rect.top <= window.innerHeight && rect.bottom >= 0;
-}
-
-function loadSection(section) {
-    const id = section.id;
-    if (loadedSections.has(id)) return;
-
-    fetch(`/section/${id}.html`)
-        .then(res => res.text())
-        .then(html => {
-            typing(section, html, 10);
-            loadedSections.add(id);
-        })
-        .catch(err => {
-            console.error(`Failed to load section: ${id}`, err);
-        });
+    return el.getBoundingClientRect().top <= window.innerHeight && el.getBoundingClientRect().bottom >= 0;
 }
 
 function handleScroll() {
     document.querySelectorAll('section').forEach(section => {
-        if (isElementInViewport(section)) {
-            loadSection(section);
-        }
+        if (!isElementInViewport(section)) return;
+        if (section?.innerHTML?.trim() === undefined) return;
+        if (section?.innerHTML?.trim() !== '') return;
+
+        fetch(`/section/${section.id}.html`)
+            .then(res => res.text())
+            .then(html => typing(section, html, 10))
+            .catch(err => console.error(`Failed to load section: ${section.id}`, err));
+
     });
 }
 
