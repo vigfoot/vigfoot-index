@@ -20,8 +20,9 @@ function isElementInViewport(el) {
 function handleScroll() {
     document.querySelectorAll('section').forEach(section => {
         if (!isElementInViewport(section)) return;
-        if (section?.innerHTML?.trim() === undefined) return;
-        if (section?.innerHTML?.trim() !== '') return;
+        if (section.classList.contains('typing')) return;
+
+        section.classList?.add('typing');
 
         fetch(`/section/${section.id}.html`)
             .then(res => res.text())
