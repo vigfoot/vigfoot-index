@@ -42,7 +42,6 @@ body::after {
 
 section {
     min-height: 50vh;
-    padding: 100px 0;
     border-top: 1px solid var(--bs-border-color);
 }
 
@@ -64,7 +63,7 @@ header {
     padding: 20px;
     font-size: 2rem;
     font-weight: bold;
-    background-color: rgba(13, 17, 23, 0); /* 완전 투명 */
+    background-color: rgba(13, 17, 23, 0);
     color: var(--bs-body-color);
     z-index: 1000;
     transition: opacity 0.5s ease;
