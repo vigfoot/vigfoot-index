@@ -38,16 +38,16 @@ body::after {
     z-index: -1;
 }
 
-/* 공통 section 스타일 */
 section {
     padding: 100px 0;
+    min-height: 30vh;
     border-top: 1px solid var(--bs-border-color);
 }
 
 section:nth-child(even) {
     background-color: rgba(var(--bs-secondary-bg-rgb), 0.5);
 }
-/* 고정 헤더 */
+
 header {
     position: fixed;
     top: 0;
